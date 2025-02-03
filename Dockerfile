@@ -3,8 +3,7 @@ ARG PYTHON_VERSION=3.8
 FROM python:${PYTHON_VERSION} AS base
 WORKDIR /app
 
-ADD https://github.com/VolodymyrKaraniuk/devops_todolist.git ./
-
+RUN git clone https://github.com/VolodymyrKaraniuk/devops_todolist.git .
 # Runtime stage
 FROM python:${PYTHON_VERSION}-slim
 WORKDIR /app
